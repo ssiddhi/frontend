@@ -26,3 +26,9 @@
 24. apple:last-of-type, orange:last-of-type
 25. bento:empty
 26. apple:not(.small)
+27. [for]
+28. plate[for]
+29. [for="Vitaly"]
+30. [for^="Sa"]
+31. [for$="ato"]
+32. [for*="obb"]
