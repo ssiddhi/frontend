@@ -15,3 +15,14 @@
 13. bento ~ pickle
 14. plate > apple
 15. orange:first-child
+16. plate :only-child
+17. plate apple, pickle
+18. :nth-child(3)
+19. bento:nth-last-child(3)
+20. apple:first-of-type
+21. plate:nth-of-type(even)
+22. :nth-of-type(2n+3)
+23. plate apple:only-of-type
+24. apple:last-of-type, orange:last-of-type
+25. bento:empty
+26. apple:not(.small)
