@@ -18,40 +18,42 @@ document.getElementById("result").appendChild(paragraph);
 
 paragraph.className = "para";
 
-//reference --- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
+//reference ---https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 //reference ---https://www.geeksforgeeks.org/how-to-check-whether-a-passed-string-is-palindrome-or-not-in-javascript/
+//reference ---https://foolishdeveloper.com/how-to-create-a-palindrome-checker-in-javascript/
+//reference ---https://getbootstrap.com/docs/5.0/utilities/colors/
 
 function handleInput(e) {
   const inp = e.target.value;
 
-  function check_palindrome(inp) {
-    //checking if input number is positive
-    if (e.target.value > 0) {
-      let j = inp.length - 1;
+  //method2
+  let halfLen = Math.floor(inp.length / 2);
+  let checkPalindrome = true;
 
-      for (let i = 0; i < j / 2; i++) {
-        let x = str[i];
-        let y = str[j - i];
-        if (x != y) {
-          return false;
-        }
-        return true;
+  // //check if input is a positive number
+  // if (e.target.value > 0) {
+  //   let j = inp.length - 1;
+  //   for (let i = 0; i < halfLen; i++) {
+  //     if (inp[i] != inp[j]) {
+  //       checkPalindrome = false;
+  //     }
+  //     j -= 1;
+  //   }
+  // }
+
+  //check if input is a positive number
+  if (e.target.value > 0) {
+    let j = inp.length - 1;
+    for (let i = 0; i < halfLen; i++) {
+      if (inp[i] != inp[j - i]) {
+        checkPalindrome = false;
       }
     }
   }
 
-  function is_palindrome(e) {
-    let res = check_palindrome(inp);
-    if (res === true) {
-      paragraph.innerHTML = "Yes. This is a palindrome!";
-    } else {
-      paragraph.innerHTML = "No. Try again.";
-    }
+  if (checkPalindrome === true) {
+    paragraph.innerHTML = "Yes. This is a palindrome!";
+  } else {
+    paragraph.innerHTML = "No. Try again.";
   }
-
-  let test = 123;
-  is_palindrome(test);
-
-  //   document.getElementsByClassName("para").innerHTML =
-  //     "Yes. This is a palindrome!";
 }
