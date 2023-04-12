@@ -18,9 +18,8 @@ paragraph.id = "para";
 function handleInput(e) {
   const inp = e.target.value;
 
-  //method2
   let halfLen = Math.floor(inp.length / 2);
-  let checkPalindrome = true;
+  let checkPalindrome;
 
   //check if input is a positive number
   if (e.target.value > 0) {
@@ -28,10 +27,15 @@ function handleInput(e) {
     for (let i = 0; i < halfLen; i++) {
       if (inp[i] !== inp[j - i]) {
         checkPalindrome = false;
+      } else {
+        checkPalindrome = true;
       }
     }
+  } else {
+    paragraph.innerHTML = "Invalid input";
   }
 
+  //display message to show result and style the text
   if (checkPalindrome === true) {
     paragraph.innerHTML = "Yes. This is a palindrome!";
     document.getElementById("para").style.color = "green";
