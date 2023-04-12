@@ -8,12 +8,12 @@ const paragraph = document.createElement("p");
 //appending paragraph as child element of div
 document.getElementById("result").appendChild(paragraph);
 
-paragraph.className = "para";
+paragraph.id = "para";
 
 //reference ---https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event
 //reference ---https://www.geeksforgeeks.org/how-to-check-whether-a-passed-string-is-palindrome-or-not-in-javascript/
 //reference ---https://foolishdeveloper.com/how-to-create-a-palindrome-checker-in-javascript/
-//reference ---https://getbootstrap.com/docs/5.0/utilities/colors/
+//reference ---https://www.tutorialspoint.com/How-to-change-the-font-color-of-a-text-using-JavaScript
 
 function handleInput(e) {
   const inp = e.target.value;
@@ -34,7 +34,9 @@ function handleInput(e) {
 
   if (checkPalindrome === true) {
     paragraph.innerHTML = "Yes. This is a palindrome!";
+    document.getElementById("para").style.color = "green";
   } else {
     paragraph.innerHTML = "No. Try again.";
+    document.getElementById("para").style.color = "red";
   }
 }
