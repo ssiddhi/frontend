@@ -14,7 +14,7 @@ const paragraph = document.createElement("p");
 
 //appending paragraph as child element of div
 // div.appendChild(paragraph);
-document.getElementsByClassName("result").appendChild(paragraph);
+document.getElementById("result").appendChild(paragraph);
 
 paragraph.className = "para";
 
