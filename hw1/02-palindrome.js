@@ -17,22 +17,31 @@ paragraph.id = "para";
 
 function handleInput(e) {
   const inp = e.target.value;
-
-  let halfLen = Math.floor(inp.length / 2);
   let checkPalindrome;
 
-  //check if input is a positive number
-  if (e.target.value > 0) {
-    let j = inp.length - 1;
-    for (let i = 0; i < halfLen; i++) {
-      if (inp[i] !== inp[j - i]) {
-        checkPalindrome = false;
-      } else {
-        checkPalindrome = true;
+  //error message for negative number
+  if (inp < 0 || isNaN(inp)) {
+    paragraph.innerHTML = "Invalid input";
+    document.getElementById("para").style.color = "red";
+    return;
+  }
+  //input validation for a single digit number
+  else if (inp >= 0 && inp < 10) {
+    checkPalindrome = true;
+  } else {
+    let halfLen = Math.floor(inp.length / 2);
+
+    //check if input is a palindrome number
+    if (e.target.value >= 10) {
+      let j = inp.length - 1;
+      for (let i = 0; i < halfLen; i++) {
+        if (inp[i] !== inp[j - i]) {
+          checkPalindrome = false;
+        } else {
+          checkPalindrome = true;
+        }
       }
     }
-  } else {
-    paragraph.innerHTML = "Invalid input";
   }
 
   //display message to show result and style the text
