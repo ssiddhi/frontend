@@ -19,19 +19,19 @@ function handleInput(e) {
   const inp = e.target.value;
   let checkPalindrome;
 
-  //error message for negative number
+  //display error message for negative number and text
   if (inp < 0 || isNaN(inp)) {
     paragraph.innerHTML = "Invalid input";
     document.getElementById("para").style.color = "red";
     return;
   }
-  //input validation for a single digit number
+  //input validation for a single digit positive number and check if it is a palindrome
   else if (inp >= 0 && inp < 10) {
     checkPalindrome = true;
   } else {
     let halfLen = Math.floor(inp.length / 2);
 
-    //check if input is a palindrome number
+    //check if input is a palindrome number for multiple digit numbers
     if (e.target.value >= 10) {
       let j = inp.length - 1;
       for (let i = 0; i < halfLen; i++) {
