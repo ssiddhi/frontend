@@ -32,7 +32,7 @@ function handleInput(e) {
     let halfLen = Math.floor(inp.length / 2);
 
     //check if input is a palindrome number for multiple digit numbers
-    if (e.target.value >= 10) {
+    if (inp >= 10) {
       let j = inp.length - 1;
       for (let i = 0; i < halfLen; i++) {
         if (inp[i] !== inp[j - i]) {
