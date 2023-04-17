@@ -11,13 +11,15 @@
     <script defer src="02-palindrome.js"></script>
   </head>
   <body class="bg-primary">
-    <main class="bg-light w-25 mx-auto border rounded mt-5 d-flex">
+    <main class="bg-light w-50 mx-auto border rounded mt-5 container">
       <section>
         <h1 class="p-2">Exercise 02 - Palindrome</h1>
         <!-- rectified accessibility errors by adding a form label-->
-        <div class="p-2">
-          <label for="inputElement">Enter a positive number:</label>
-          <input type="number" id="inputElement" />
+        <div class="p-2 row">
+          <label for="inputElement" class="col-auto"
+            >Enter a positive number:</label
+          >
+          <input type="number" class="col-12 col-md-6" id="inputElement" />
         </div>
         <div class="p-2">
           <p class="mb-0">Is this a palindrome?</p>
