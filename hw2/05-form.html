@@ -13,7 +13,7 @@
   </head>
   <body class="bg-dark">
     <main class="container bg-light w-50">
-      <form>
+      <form id="form">
         <h1 class="mt-5 p-2 text-center">Exercise 05 - Form</h1>
         <div class="m-2">
           <label for="name" class="form-group fw-bold">Full Name:</label>
@@ -27,14 +27,15 @@
           <label for="options" class="form-group fw-bold"
             >Registration Status:</label
           >
-          <select class="form-control form-select" id="options">
+          <select required class="form-control form-select" id="options">
             <option value="" selected>Choose an Option</option>
-            <option value="Part-time">Part-time</option>
-            <option value="Full-time">Full-time</option>
+            <option value="Registered">Registered</option>
+            <option value="Not-Registered">Not-Registered</option>
+            <option value="Waitlisted">Waitlisted</option>
           </select>
         </div>
         <div class="m-2">
-          <label for="checkboxes" class="form-group fw-bold"
+          <label for="checkboxes" class="checkboxes form-group fw-bold"
             >Have you taken any of the following courses?</label
           >
           <div class="form-check mt-2">
@@ -43,6 +44,7 @@
               type="checkbox"
               value=""
               id="checkboxes"
+              name="courselist"
             />
             <label class="form-check-label" for="checkbox1">
               Programming Languages
@@ -54,6 +56,7 @@
               type="checkbox"
               value=""
               id="checkbox1"
+              name="courselist"
             />
             <label class="form-check-label" for="checkbox2">
               Operating Systems
@@ -65,6 +68,7 @@
               type="checkbox"
               value=""
               id="checkbox2"
+              name="courselist"
             />
             <label class="form-check-label" for="checkbox3">
               Full Stack Web Development
@@ -85,14 +89,12 @@
             name="Submit"
             value="Submit"
             class="btn btn-primary col-lg-5 w-50"
-            style="float: left"
           />
           <input
             type="reset"
             name="Reset"
             value="Reset"
             class="btn btn-secondary col-lg-5 w-50"
-            style="float: right"
           />
         </div>
       </form>
