@@ -34,16 +34,16 @@
             <option value="Waitlisted">Waitlisted</option>
           </select>
         </div>
-        <div class="m-2">
-          <label for="checkboxes" class="checkboxes form-group fw-bold"
-            >Have you taken any of the following courses?</label
-          >
+        <fieldset class="m-2">
+          <legend for="checkboxes" class="checkboxes form-group fw-bold"></legend>
+            Have you taken any of the following courses?
+          </legend>
           <div class="form-check mt-2">
             <input
               class="form-check-input"
               type="checkbox"
               value=""
-              id="checkboxes"
+              id="checkbox1"
               name="courselist"
             />
             <label class="form-check-label" for="checkbox1">
@@ -74,7 +74,7 @@
               Full Stack Web Development
             </label>
           </div>
-        </div>
+        </fieldset>
         <div class="form-group">
           <label for="textArea" class="fw-bold">Anything else?</label>
           <textarea
