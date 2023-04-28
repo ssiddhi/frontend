@@ -8,10 +8,8 @@ formInput.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
 
-  let formData = new FormData(event.target);
-
-  let user = formData.get("name");
-  let email = formData.get("email");
+  let user = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
 
   let rstatus = document.getElementById("options").value;
 
