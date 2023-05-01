@@ -16,17 +16,13 @@ function handleClick(event) {
       toggle.value = "Stop";
       toggle.classList = "btn btn-danger mb-2";
       interval = setInterval(() => {
-        // function getRandomColor() {
         const r = Math.floor(Math.random() * 255);
         const g = Math.floor(Math.random() * 255);
         const b = Math.floor(Math.random() * 255);
         let bgColor = `rgba(${r}, ${g}, ${b})`;
         document.body.style.background = bgColor;
-        // return;
       }, input.value * 1000);
       input.disabled = true;
-      // input.disabled = true;
-      // setInterval();
       return;
     } else {
       toggle.value = "Start";
@@ -35,7 +31,6 @@ function handleClick(event) {
       interval = null;
       document.body.style.background = "white";
       input.disabled = false;
-      // changeInterval();
     }
   }
 }
