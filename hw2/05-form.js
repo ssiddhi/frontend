@@ -1,1 +1,59 @@
 // Add your code here
+// reference---https://stackoverflow.com/questions/11599666/get-the-value-of-checked-checkbox
+
+let formInput = document.getElementById("form");
+
+formInput.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let user = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+
+  let rstatus = document.getElementById("options").value;
+
+  let course = document.querySelectorAll('input[name="courselist"]:checked');
+
+  let message = document.getElementById("textArea").value;
+
+  //printing user input data to console
+  //print user name
+  if (user === null || user === "") {
+    console.log("Full Name: No submission");
+  } else {
+    console.log("Full Name: " + user);
+  }
+
+  //print user email
+  if (email === null || email === "") {
+    console.log("Email: No submission");
+  } else {
+    console.log("Email: " + email);
+  }
+
+  //print user registration status
+  if (rstatus === null || rstatus === "") {
+    console.log("Registration Status: No submission");
+  } else {
+    console.log("Registration Status: " + rstatus);
+  }
+
+  //create an array to store the checklist
+  let checkboxesChecked = [];
+
+  // loop over them all
+  course.forEach((checkbox) => {
+    // And stick the checked ones onto the array
+    checkboxesChecked.push(checkbox.value);
+  });
+
+  console.log("Courses: ", checkboxesChecked);
+
+  //print user message
+  if (message === null || message === "") {
+    console.log("Message: No submission");
+  } else {
+    console.log("Message: " + message);
+  }
+}
