@@ -1,57 +1,55 @@
 // url for the Thrones API
 const url = "https://thronesapi.com/api/v2/Characters";
 
-// fetch(url);
-
-//get the user data and render the data inside the <div> element with the class container
-// let container = document.querySelector(".container");
-
 //reference --https://www.javascripttutorial.net/javascript-fetch-api/
 
-let content = document.querySelector("#content");
+let section = document.querySelector("section");
 
-function show(user) {
-  let character = document.createElement("div");
-  let name = document.createElement("fullName");
+function show(character) {
+  let div = document.createElement("div");
   let image = document.createElement("img");
-  let title = document.createElement("title");
+  let name = document.createElement("h2");
+  let title = document.createElement("p");
 
-  image.src = user.imageUrl;
-  name.textContent = user.fullName;
-  title.textContent = user.title;
+  div.className = "image-card";
 
-  content.appendChild(character);
+  image.className = "image-style";
+  image.src = character.imageUrl;
+  image.alt = character.image;
 
-  character.appendChild(image);
-  character.appendChild(name);
-  character.appendChild(title);
+  name.textContent = character.fullName;
+  name.classList.add("fs-5", "fw-bold");
 
-  return character;
+  title.textContent = character.title;
+  title.classList.add("fs-6", "fw-bold");
+
+  div.appendChild(image);
+  div.appendChild(name);
+  div.appendChild(title);
+  section.appendChild(div);
+
+  return div;
 }
 
 //get request
 fetch(url)
-  .then((response) => {
-    // returns the response object
-    // the data is in the body of the response
-    console.log("Request successful", response);
-    return response.json();
-  })
-  .then((data) => {
-    // returns the data in json format
-    data.forEach((user) => {
-      show(user);
-    });
+  .then((response) => response.json())
+  .then((item) => {
+    const row = document.createElement("div");
+    row.classList.add("row");
 
-    console.log("Data", data);
+    item.forEach((character) => {
+      const card = show(character);
+
+      const col = document.createElement("div");
+      col.classList.add("col-md-6", "col-lg-3");
+
+      col.appendChild(card);
+      row.appendChild(col);
+    });
+    section.appendChild(row);
   })
+
   .catch((error) => {
     console.error("Request failed", error);
   });
-
-//Loop through the response and create the appropriate DOM elements to show an image of every character along with the full name and the title
-// function show(data) {
-//   data.forEach((user) => {
-//     console.log(user);
-//   });
-// }
