@@ -29,6 +29,7 @@ h1 {
 
 div.image-card:hover {
   background-color: var(--blue);
+  color: var(--white);
 }
 
 .donut-chart {
