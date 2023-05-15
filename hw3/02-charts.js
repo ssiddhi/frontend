@@ -150,10 +150,15 @@ const renderChart = (houses, backgroundColors, borderColors) => {
         {
           label: "Thrones API house",
 
-          data: [
-            3, 1, 10, 2, 5, 3, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 1, 2, 3, 2, 1, 1,
-            1, 1,
-          ],
+          data:
+            //  [
+            //   3, 1, 10, 2, 5, 3, 1, 1, 1, 3, 1, 2, 1, 1, 1, 2, 1, 2, 3, 2, 1, 1,
+            //   1, 1,
+            // ]
+            [
+              3, 1, 10, 5, 4, 3, 1, 1, 1, 4, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1,
+              1, 1,
+            ],
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
