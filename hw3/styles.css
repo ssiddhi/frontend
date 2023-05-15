@@ -13,6 +13,25 @@ h1 {
   text-align: center;
 }
 
+.image-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+}
+
+.image-style {
+  height: 200px;
+  margin-bottom: 10px;
+  display: center;
+}
+
+div.image-card:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
 .donut-chart {
   border-radius: 0.8rem;
   background-color: var(--white);
