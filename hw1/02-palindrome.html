@@ -6,21 +6,27 @@
     <title>02 - Palindrome</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
     <script defer src="02-palindrome.js"></script>
   </head>
-  <body>
-    <main>
+  <body class="bg-primary">
+    <main class="bg-light w-50 mx-auto border rounded mt-5 container">
       <section>
-        <h1>Exercise 02 - Palindrome</h1>
-        <div>
-          <label>Enter a positive number:</label>
-          <input type="number" />
+        <h1 class="p-2">Exercise 02 - Palindrome</h1>
+        <!-- rectified accessibility errors by adding a form label-->
+        <div class="p-2 row">
+          <label for="inputElement" class="col-auto"
+            >Enter a positive number:</label
+          >
+          <input type="number" class="col-12 col-md-6" id="inputElement" />
         </div>
-        <div>
-          <p>Is this a palindrome?</p>
-          <div></div>
+        <div class="p-2">
+          <p class="mb-0">Is this a palindrome?</p>
+          <!-- <div></div> -->
         </div>
+        <!-- adding extra div tag to display message -->
+        <div class="p-2 mb-2" id="result"></div>
       </section>
     </main>
   </body>
